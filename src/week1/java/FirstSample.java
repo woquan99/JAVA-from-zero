@@ -60,7 +60,7 @@ public class FirstSample {
         int[] copiedLuckyNumbers = Arrays.copyOf(luckyNumbers, 2*luckyNumbers.length);
         System.out.println(Arrays.toString(copiedLuckyNumbers));
 
-//      多维数组
+//
 
 
 
