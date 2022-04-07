@@ -25,7 +25,7 @@ class Employee3
     static
     {
         Random generator = new Random();
-        nextId = generator.nextInt(10000);
+        nextId = generator.nextInt(10000);// int nextInt(int n) 表示返回一个0——n-1之间的随机数
     }
     {
         id = nextId;
