@@ -1,15 +1,16 @@
 package FirstCodeJava.Part9;
 
 /**
+ * 实现多线程有2种方法，继承thread或者使用Runnable接口（实际开发中选用，可避免单继承的局限）
  * 利用Runnable接口实现多线程
  * 启动了三个线程对象，但3个线程对象都占着同一个Runnable接口对象的引用，实现了数据共享的操作
  * 涉及到的代码：P380 9-9
  * */
-class MyThread1 implements Runnable { 		// 线程的主体类
+class MyThread1 implements Runnable { 		        // 线程的主体类
     private int ticket = 5; 						// 一共5张票
     @Override
     public void run() { 							// 线程的主方法
-        for (int x = 0; x < 50; x++) {			// 循环50次
+        for (int x = 0; x < 50; x++) {			    // 循环50次
             if (this.ticket > 0) {
                 System.out.println("卖票，ticket = " + this.ticket --);
             }
