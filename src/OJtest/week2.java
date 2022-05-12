@@ -120,20 +120,156 @@ import java.util.ArrayList;
  * 题目参考：
  * */
 
-//public class week2 {
-//    public static void main(String[] args) {
-//
-//    }
-//}
+import java.util.Iterator;
+import java.util.LinkedList;
+class EulerCircuit6 {
+    private int V; // 顶点数量
+    private LinkedList<Integer> adj[];// 邻接表
+    private int in[]; // 维护入度
 
+    EulerCircuit6(int v) {
+        V = v;
+        adj = new LinkedList[v];
+        in = new int[V];
+        for (int i = 0; i < v; ++i) {
+            adj[i] = new LinkedList();
+            in[i] = 0;
+        }
+    }
+
+    void addEdge(int v, int w) {
+        adj[v].add(w);
+        in[w]++;
+    }
+
+    void DFSUtil(int v, Boolean visited[]) {
+        // 将当前节点标记为已访问
+        visited[v] = true;
+
+        int n;
+
+        // 对与此顶点相邻的所有顶点遍历
+        Iterator<Integer> i = adj[v].iterator();
+        while (i.hasNext()) {
+            n = i.next();
+            if (!visited[n])
+                DFSUtil(n, visited);
+        }
+    }
+
+    // 返回此图的反转（或转置）
+    EulerCircuit6 getTranspose() {
+        EulerCircuit6 g = new EulerCircuit6(V);
+        for (int v = 0; v < V; v++) {
+            // 对与此顶点相邻的所有顶点遍历
+            Iterator<Integer> i = adj[v].listIterator();
+            while (i.hasNext()) {
+                g.adj[i.next()].add(v);
+                (g.in[v])++;
+            }
+        }
+        return g;
+    }
+
+    // 如果图是强连接的，则返回true
+    Boolean isSC() {
+        // Step 1: 将所有顶点标记为未访问（对于第一个DFS）
+        Boolean visited[] = new Boolean[V];
+        for (int i = 0; i < V; i++)
+            visited[i] = false;
+
+        // Step 2: 从第一个顶点开始进行DFS遍历.
+        DFSUtil(0, visited);
+
+        // 如果DFS遍历没有访问所有顶点，则返回false.
+        for (int i = 0; i < V; i++)
+            if (visited[i] == false)
+                return false;
+
+        // Step 3: 创建一个反转图
+        EulerCircuit6 gr = getTranspose();
+
+        // Step 4: 将所有顶点标记为未访问（对于第二个DFS）
+        for (int i = 0; i < V; i++)
+            visited[i] = false;
+
+        // Step 5: 从第一个顶点开始对反转图执行DFS.
+        // 起始顶点必须与第一个DFS的起始点相同
+        gr.DFSUtil(0, visited);
+
+        // 如果在第二个DFS中未访问所有顶点，则返回false
+        for (int i = 0; i < V; i++)
+            if (visited[i] == false)
+                return false;
+
+        return true;
+    }
+
+    /*
+     * 如果有向图有欧拉回路，则此函数返回true； 否则返回false
+     */
+    Boolean isEulerianCycle() {
+        // 检查是否连接了所有非零度顶点
+        if (isSC() == false)
+            return false;
+
+        // 检查每个顶点的进出度是否相同
+        for (int i = 0; i < V; i++)
+            if (adj[i].size() != in[i])
+                return false;
+
+        return true;
+    }
+
+    public static void main(String[] args) throws java.lang.Exception {
+        EulerCircuit6 g = new EulerCircuit6(5);
+        g.addEdge(1, 0);
+        g.addEdge(0, 2);
+        g.addEdge(2, 1);
+        g.addEdge(0, 3);
+        g.addEdge(3, 4);
+        g.addEdge(4, 0);
+
+        if (g.isEulerianCycle())
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+    }
+}
 
 /**
  * 编程题5-https://matiji.net/exam/dohomework/615/1
- * 题目参考：
+ * 题目参考：给定三个整数A,B，n，试求满足A+X^n=B的X值（X必须为整数，若无解则输出“No solution”，有多个解则输出最小的解）
+ * A和B的绝对值不超过1000，且均不等于0
+ * 输入格式：三个数，A,B,n(1<=n<=10)
+ * 输出格式：要求输出一行一个整数或者No solution
  * */
-
-public class week2 {
-    public static void main(String[] args) {
-
-    }
-}
+//
+//public class week2 {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int A = sc.nextInt();
+//        int B = sc.nextInt();
+//        int n = sc.nextInt();
+//        int res = getResult(A, B, n);
+//        if (res == 0) {
+//            System.out.println("No solution");
+//        } else {
+//            System.out.println(res);
+//        }
+//    }
+//    public static int getResult(int A,int B,int n){
+//        double i = (double)1/n;
+//        double x = 0;
+//        if (B-A<0){
+//            x = -Math.round(Math.pow((A-B),i));
+//        }else{
+//            x = Math.round(Math.pow((B-A),i));
+//        }
+//        if(x!=0 && Math.pow(x,n)==(B-A)){
+//            if(n%2==0)return (int)-x;
+//            else return (int)x;
+//        }
+//        return 0;
+//    }
+//}
