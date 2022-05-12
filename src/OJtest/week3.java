@@ -12,13 +12,13 @@ package OJtest;
  * 题目来源：https://matiji.net/exam/dohomework/689/1
  * 题目参考：https://blog.csdn.net/cactus_lrg/article/details/79890015
  * */
-import java.util.Scanner;
-class week3 {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-    }
-}
+//import java.util.Scanner;
+//class week3 {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//
+//    }
+//}
 
 
 /**
