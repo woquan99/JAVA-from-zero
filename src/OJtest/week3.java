@@ -10,15 +10,35 @@ package OJtest;
  *     10  0
  * 输出： 0.2
  * 题目来源：https://matiji.net/exam/dohomework/689/1
- * 题目参考：https://blog.csdn.net/cactus_lrg/article/details/79890015
+ * 这里我们可以定义一个类来输入坐标
+ *
  * */
-//import java.util.Scanner;
-//class week3 {
-//    public static void main(String[] args) {
-//        Scanner input = new Scanner(System.in);
-//
-//    }
-//}
+import java.util.Scanner;
+class week3 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int k = input.nextInt();
+        MyPoint[] points = new MyPoint[n];
+        for (int i = 0; i < n; i++) {
+            points[i] = new MyPoint(input.nextInt(), input.nextInt());
+        }
+
+        double distance = 0;
+        for (int i =0;i<n-1;i++){
+            distance +=Math.pow(Math.pow(Math.abs(points[i].x-points[i+1].x),2)+Math.pow(Math.abs(points[i].y-points[i+1].y),2),0.5);
+        }
+        System.out.printf("%.1f",(distance*k/50f));//之前的数为整型，需要添加f变为小数
+    }
+}
+class MyPoint{
+    public int x;
+    public int y;
+    public MyPoint(int x,int y){
+        this.x = x;
+        this.y = y;
+    }
+}
 
 
 /**
