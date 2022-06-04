@@ -29,5 +29,16 @@ public class Logic {
         int max = (num1>num2)?num1:num2;
         System.out.println("max = "+max);
 
+        // test
+        boolean x = true;
+        boolean y = false;
+        short z = 40;
+        if ((z++ == 40)&&(y == true)){
+            z++;
+        }
+        if ((x = false)||(++z == 43)){
+            z++;
+        }
+        System.out.println("z="+z);
         }
 }

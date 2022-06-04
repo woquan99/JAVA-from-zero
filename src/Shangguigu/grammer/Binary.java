@@ -11,4 +11,12 @@ package Shangguigu.grammer;
  *
  * */
 public class Binary {
+    public static void main(String[] args){
+        /**将一个0~255范围内的整数表示为十六进制值*/
+        // 自动实现 （手动就算了，麻烦）
+        String str1 = Integer.toBinaryString(60);
+        String str2 = Integer.toHexString(60);
+        System.out.println(str1);
+        System.out.println(str2);
+    }
 }
