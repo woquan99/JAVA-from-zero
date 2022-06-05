@@ -2,7 +2,6 @@ package Shangguigu.grammer;
 // 第一步调包
 import java.util.Scanner;
 
-
 public class ScannerTest {
     public static void main(String[] args){
         // 第二步实例化
@@ -17,12 +16,16 @@ public class ScannerTest {
         System.out.println("请输入你的体重：");
         double weight  = scan.nextDouble();
         // 对于char 的获取，Scanner没有提供相关的方法，只能获取一个字符串
-        System.out.println("请输入你的性别");
+        System.out.println("请输入你的性别:(男/女)");
         String gender = scan.next();
+        if(gender.equals("男")){
+            System.out.println("原来你是男生呀！");
+        }
         char genderchar = gender.charAt(0);
         System.out.println(genderchar);
 
         /** 随机产生一个两位数*/
+        // 公式：[a,b] :(int)(Math.random()*(b-a+1)+a)
         int number =(int)(Math.random()*90+10);
         int numberShi = number/10;
         int numberGe = number%10;
