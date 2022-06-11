@@ -50,7 +50,5 @@ public class ArrayTest {
             System.out.println("student"+i+"成绩为"+scores[i]+",等级评定为"+level);
         }
 
-
-
         }
 }
