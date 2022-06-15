@@ -27,11 +27,11 @@ public class ArraysTest {
 
         //5.int binarySearch(int[] a,int key)对排序后的数组进行二分法检索指定的值。
         int[] arr3 = new int[]{43,32,76,92,-65,85,71,-42};
-        int index = Arrays.binarySearch(arr3, 210);
+        int index = Arrays.binarySearch(arr3, 32);
         if(index >= 0){
             System.out.println(index);
         }else{
-            System.err.println("未找到。");
+            System.err.println("未找到。");// err可以输出标红
         }
     }
 }
