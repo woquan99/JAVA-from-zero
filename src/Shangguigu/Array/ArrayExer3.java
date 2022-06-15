@@ -2,7 +2,6 @@ package Shangguigu.Array;
 
 /**
  * 创建一个长度为6的int型数组，要求数组的元素取值为1-30，同时各个元素都不同
- *
  * */
 
 public class ArrayExer3 {
