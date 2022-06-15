@@ -1,4 +1,4 @@
-package Shangguigu.grammer;
+package Shangguigu.Array;
 /**
  * 杨辉三角：
  * 1.第一行有1个元素，第n行有n个元素；

@@ -1,4 +1,4 @@
-package Shangguigu.grammer;
+package Shangguigu.Array;
 
 import java.util.Scanner;
 

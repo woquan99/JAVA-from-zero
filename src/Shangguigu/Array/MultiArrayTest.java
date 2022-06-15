@@ -1,4 +1,4 @@
-package Shangguigu.grammer;
+package Shangguigu.Array;
 
 /**
  *如果一个一维数组的元素如果还是一个一维数组类型，则此数组A称为二维数组

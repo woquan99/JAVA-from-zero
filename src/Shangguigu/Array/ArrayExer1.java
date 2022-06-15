@@ -1,4 +1,4 @@
-package Shangguigu.grammer;
+package Shangguigu.Array;
 
 public class ArrayExer1 {
     public static void main(String[] args){
