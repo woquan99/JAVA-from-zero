@@ -1,7 +1,7 @@
 package Shangguigu.grammer;
 
 /**
- *
+ *如果一个一维数组的元素如果还是一个一维数组类型，则此数组A称为二维数组
  */
 
 public class MultiArrayTest {
@@ -19,7 +19,7 @@ public class MultiArrayTest {
         // 1.4 如何遍历二维数组
         for(int i= 0;i<arr1.length;i++){
             for (int j= 0;j<arr1[i].length;j++){
-                System.out.println(arr1[i][j]);
+                System.out.println(arr1[i][j]+"\t");
             }
             System.out.println();
         }
@@ -40,10 +40,6 @@ public class MultiArrayTest {
         float[][] arr5 = new float[4][];
         System.out.println(arr5[1]);// null
         System.out.println(arr5[1][2]);// 报错，空指针异常，没有指针
-
-
-
-
 
     }
 }

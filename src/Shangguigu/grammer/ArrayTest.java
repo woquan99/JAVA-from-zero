@@ -14,7 +14,7 @@ public class ArrayTest {
         // 2.浮点型是：0.0；
         // 3.char型是：0或'\u0000',而非'0';
         // 4.boolean型是：false
-        // 5.String型是：null
+        // 5.引用类型（如：String型）是：null
          */
 
         System.out.println("请输入学生人数：");
