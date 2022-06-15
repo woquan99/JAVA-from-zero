@@ -2,7 +2,8 @@ package Shangguigu.Array;
 /**
  * 把arr1初始化为8个素数，2,3,5,7,11,13,17,19
  * 赋值arr2变量变为arr1,修改arr2中的偶索引元素，使其等于索引值（arr[0]=0,arr[2]=2）,打印arr1
- * 思考：arr1和arr2是什么关系？修改题目，实现arr2对arr1数组的复制
+ * 思考：arr1和arr2是什么关系？arr1和arr2的地址值相同，都指向了堆空间中唯一的一个数组实体
+ * 修改题目，实现arr2对arr1数组的复制
  * */
 public class ArrayExer4 {
     public static void main(String[] args){
@@ -12,6 +13,8 @@ public class ArrayExer4 {
             System.out.print(arr1[i]+"\t");
         }
         System.out.println();
+
+
         arr2 = arr1; // 这里面只是把arr1的地址赋给arr2,不能称作数组的复制
         // 修改arr2中的偶索引元素，使其等于索引值
         for (int i =0;i<arr2.length;i++){
@@ -20,8 +23,18 @@ public class ArrayExer4 {
             System.out.print(arr2[i]+"\t");
         }
         System.out.println();
+
         for (int i =0;i<arr1.length;i++){
             System.out.print(arr1[i]+"\t");
         }
+
+        // 赋值arr3变量等于arr1
+        // 数组的复制：
+        int[] arr3 = new int[arr1.length];
+        for (int i=0;i<arr3.length;i++){
+            arr3[i]=arr1[i];
+        }
+
+
     }
 }
