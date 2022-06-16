@@ -1,4 +1,4 @@
-package Shangguigu.toobject;
+package Shangguigu.oop;
 
 /**
  * 可变个数形参的方法：数据类型 ... 变量名
