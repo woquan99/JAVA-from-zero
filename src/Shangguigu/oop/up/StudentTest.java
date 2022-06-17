@@ -54,8 +54,6 @@ public class StudentTest {
             System.out.println(stus[i].showinfo());
         }
 
-
-
     }
 }
 
