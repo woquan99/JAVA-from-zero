@@ -19,7 +19,7 @@ public class StudentTest {
             // 给数组元素赋值
             stus[i]=new Student();
             // 给student的属性赋值
-            stus[i].number=i;
+            stus[i].number=i+1;
             // 年级【1,6】
             stus[i].state=(int)(Math.random()*(6-1+1)+1);
             // 成绩【0,100】
