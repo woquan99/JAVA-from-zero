@@ -14,7 +14,6 @@ public class StudentTest {
     public static void main(String[] args) {
         // 声明一个student类型数组
         Student[] stus = new Student[20];
-
         for(int i=0;i< stus.length;i++){
             // 给数组元素赋值
             stus[i]=new Student();

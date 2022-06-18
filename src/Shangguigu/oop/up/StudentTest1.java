@@ -7,15 +7,14 @@ package Shangguigu.oop.up;
  * 问题一：打印出3年级(state值为3）的学生信息。
  * 问题二：使用冒泡排序按学生成绩排序，并遍历所有学生信息
  * 提示：  1) 生成随机数：Math.random()，返回值类型double;
- * 		2) 四舍五入取整：Math.round(double d)，返回值类型long。
+ * 		  2) 四舍五入取整：Math.round(double d)，返回值类型long。
  *
  *  此代码是对StudentTest.java的改进，将操作数组的功能封装到方法中。
  */
 public class StudentTest1 {
     public static void main(String[] args) {
-        //声明一个Student类型的数组
+        // 声明一个Student类型的数组
         Student2[] stu = new Student2[20];
-
         for(int i = 0;i <stu.length;i++){
             //给数组元素赋值
             stu[i] = new Student2();
@@ -27,6 +26,7 @@ public class StudentTest1 {
             stu[i].score = (int)(Math.random() * (100 - 0 + 1));
         }
 
+        // 造对象
         StudentTest1 test = new StudentTest1();
 
         //遍历学生数组
