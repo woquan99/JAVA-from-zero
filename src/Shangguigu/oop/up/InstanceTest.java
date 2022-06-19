@@ -24,7 +24,7 @@ public class InstanceTest {
 
         //*******************************
         PhoneMall mall = new PhoneMall();
-//		mall.show(p);
+//		mall.show(p);// 这样也没有问题
         //匿名对象的使用
         mall.show(new Phone());
     }
