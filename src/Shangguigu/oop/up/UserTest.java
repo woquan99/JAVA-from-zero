@@ -1,6 +1,6 @@
 package Shangguigu.oop.up;
 
-/*
+/**
  * 类中属性的使用
  *
  * 属性(成员变量)	vs	局部变量
@@ -36,6 +36,18 @@ package Shangguigu.oop.up;
  * 		2.4 在内存中加载的位置，亦各不相同。
  * 		属性:加载到堆空间中(非 static)
  * 		局部变量:加载到栈空间
+ *
+ *
+ *   总结:属性赋值的先后顺序
+ *
+ *   ① 默认初始化值
+ *   ② 显式初始化
+ *   ③ 构造器中赋值
+ *   ④ 通过"对象.方法" 或 “对象.属性”的方式，赋值
+ *
+ *   以上操作的先后顺序:① - ② - ③ - ④
+ *
+ *
  */
 public class UserTest {
     public static void main(String[] args) {
@@ -61,4 +73,20 @@ class User{
         String food = "烙饼";	//烙饼:局部变量
         System.out.println("北方人喜欢吃:" + food);
     }
+
+    public User(){
+
+    }
+
+    public User(int a){
+        age = a;
+    }
+
+    public void setAge(int a){
+        age = a;
+    }
+    public int getAge(){
+        return age;
+    }
+
 }

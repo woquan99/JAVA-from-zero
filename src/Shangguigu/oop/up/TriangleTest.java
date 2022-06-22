@@ -11,9 +11,7 @@ class TriAngle {
     private double base;//底边长
     private double height;//高
 
-    public TriAngle(){
-
-    }
+    public TriAngle(){}
 
     public TriAngle(double b,double h){
         base = b;
@@ -43,8 +41,6 @@ public class TriangleTest {
         TriAngle t1 = new TriAngle();
         t1.setBase(2.0);
         t1.setHeight(2.5);
-//		t1.base = 2.5;//The field TriAngle.base is not visible
-//		t1.height = 4.3;
         System.out.println("base : " + t1.getBase() + ",height : " + t1.getHeight());
 
         TriAngle t2 = new TriAngle(5.1,5.6);
