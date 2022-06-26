@@ -5,7 +5,7 @@ package Shangguigu.oop.up;
  * 1.this 用来修饰、调用：属性、方法、构造器
  *
  * 2.this 修饰属性和方法:
- * 		this 理解为：当前对象,或当前正在创建的对象。
+ * 		this 理解为：当前对象  或  当前正在创建的对象。
  *
  *  2.1 在类的方法中，我们可以使用"this.属性"或"this.方法"的方式，调用当前对象属性和方法。
  *  	通常情况下，我们都选择省略“this.”。特殊情况下，如果方法的形参和类的属性同名，我们必须显式
@@ -59,9 +59,9 @@ class Person4{
     }
 
     public Person4(String name,int age){
-        this(age);	//调用构造器的一种方式
+        this(age);	//调用构造器的一种方式，调用56行
         this.name = name;
-//		this.age = age;
+//		this.age = age;// 62行已经调用了，所以无需再写一次，故注释掉
     }
 
     public void setName(String name){
