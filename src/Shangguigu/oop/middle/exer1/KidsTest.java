@@ -9,9 +9,5 @@ public class KidsTest {
         someone.setSex(1);
         someone.employeed();
         someone.manOrWoman();
-
-
-
-
     }
 }
