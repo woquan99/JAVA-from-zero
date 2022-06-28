@@ -21,7 +21,7 @@ public class Girl {
         return this.age;
     }
     public void marry(Boy boy){
-        System.out.println("我想娶"+boy.getName());
+        System.out.println("我想嫁给"+boy.getName());
         boy.marry(this);// this代表当前对象，谁调用marry,谁就是this
     }
     /**
