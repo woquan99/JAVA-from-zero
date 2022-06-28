@@ -1,6 +1,6 @@
 package Shangguigu.oop.middle.class1;
 
-public class Person {
+public class Person extends Creature{
     private int age;
     String name;
     public Person(){

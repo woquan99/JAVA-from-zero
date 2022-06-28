@@ -23,6 +23,16 @@ package Shangguigu.oop.middle.class1;
  *  	子类和父类的关系：不同于子集与集合的关系。
  *  	extends:延展、扩展
  *
+ * 三、Java 中关于继承性的规定：
+ *  	1.一个类可以被多个类继承
+ *  	2.Java 中类的单继承性：一个类只能有一个父类
+ *  	3.子父类是相对的概念。
+ *  	4.子类直接继承的父类，称为：直接父类。间接继承的父类，称为，间接父类。
+ *  	5.子类继承父类后，就获取了直接父类以及所有间接父类中声明的属性和方法。
+ *
+ * 四、1.如果我们没有显式的声明一个类的父类的话，则此类继承于 java.lang.Object 类
+ * 	  2.所有的 java 类(除 java.long.Object 类之外)都直接或间接地继承于 java.lang.Object 类;
+ * 	  3.意味着，所有的 java 类具有 java.lang.Object 类声明的功能。
  */
 public class ExtendsTest {
     public static void main(String[] args) {
@@ -36,9 +46,11 @@ public class ExtendsTest {
         Student s1 = new Student();
         s1.eat();
         s1.name = "Tom";
-
         s1.setAge(10);
         System.out.println(s1.getAge());
+        s1.brease();
+        Creature c = new Creature();
+        System.out.println(c.toString());
 
     }
 }
