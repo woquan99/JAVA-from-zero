@@ -1,5 +1,7 @@
 package Shangguigu.oop.up.exer4;
 
+import java.util.Arrays;
+
 public class BankTest {
 
     public static void main(String[] args) {
@@ -18,6 +20,10 @@ public class BankTest {
         bank.addCustomer("万里", "杨");
 
         System.out.println("银行客户的个数为: " + bank.getNumberOfCustomers());
+
+        // 数组转变为字符串
+        String info = Arrays.toString(new int[]{1,2,3});
+        System.out.println(info);
 
     }
 }
