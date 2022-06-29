@@ -32,7 +32,7 @@ public class SuperTest {
         Student s1 = new Student("Ton",21,"IT" );
         s1.show();
 
-        System.out.println("***********************");
+        System.out.println("************************");
         Student s2 = new Student();
 
     }
