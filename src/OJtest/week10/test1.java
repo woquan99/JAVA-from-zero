@@ -31,6 +31,7 @@ package OJtest.week10;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+// 将public修饰的类的名称修改成和文件名一样就可以
 public class test1 {
     public static void main(String args[]) throws FileNotFoundException {
         MaxSubArrayDemo p = new MaxSubArrayDemo();
