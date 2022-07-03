@@ -1,7 +1,5 @@
-package Shangguigu.abnormal;
+package Shangguigu.Exception;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.Date;
 import java.util.Scanner;
 import org.junit.Test;
@@ -53,15 +51,16 @@ public class ExceptionTest {
         System.out.println(a / b);
     }
 
+
     // InputMismatchException
     @Test
     public void test5() {
         Scanner scanner = new Scanner(System.in);
         int score = scanner.nextInt();
         System.out.println(score);
-
         scanner.close();
     }
+
 
     // NumberFormatException
     @Test
@@ -71,12 +70,14 @@ public class ExceptionTest {
         int num = Integer.parseInt(str);
     }
 
+
     // ClassCaseException
     @Test
     public void test3() {
         Object obj = new Date();
         String str = (String)obj;
     }
+
 
     // ArrayIndexOutOfBoundsException
     @Test
@@ -87,6 +88,7 @@ public class ExceptionTest {
         // String str = "abc";
         // System.out.println(str.charAt(3));
     }
+
 
     // NullPointerException
     @Test
