@@ -33,6 +33,7 @@ public class FinallyTest {
             }
 
         } catch (FileNotFoundException e) {
+            System.out.println("出现异常了，不要着急....");
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
