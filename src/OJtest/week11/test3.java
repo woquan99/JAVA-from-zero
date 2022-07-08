@@ -26,7 +26,7 @@ public class test3 {
             arr[i]=input.nextInt();
             sum+=arr[i];
         }
-        if(sum>M){
+        if(sum>=M){
             System.out.println("Yes");
         }else{
             System.out.println("No");
