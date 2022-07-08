@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * 题目来源：https://matiji.net/exam/dohomework/1081/2
+ * Lucas定理
  * 给定整数n,m,p，计算C(n+m,n) mod p的值。
  * 输入格式：一行包含三个整数 n,m,p
  * 输出格式：一行包含一个整数C(n+m,m) mod p
