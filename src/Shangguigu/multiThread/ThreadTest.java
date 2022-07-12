@@ -3,8 +3,8 @@ package Shangguigu.multiThread;
 /**
  * 多线程的创建，方式一：继承于Thread类
  * 1.创建一个继承于Thread类的子类
- * 2.重写Thread的run()方法 ---> 将此线程的方法声明在run()中
- * 3.创建Thread类的子对象
+ * 2.重写 Thread 的run()方法 ---> 将此线程的方法声明在run()中
+ * 3.创建 Thread 类的子对象
  * 4.通过此对象调用start()
  *
  * 例子:遍历100以内的所有的偶数
