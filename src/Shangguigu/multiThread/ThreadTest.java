@@ -12,7 +12,6 @@ package Shangguigu.multiThread;
 
     //1.创建一个继承于Thread类的子类
 class MyThread extends Thread{
-
     //2.重写Thread类的run()方法
     @Override
     public void run() {
@@ -31,12 +30,13 @@ public class ThreadTest {
 
         //4.通过此对象调用start():①启动当前线程 ②调用当前线程的run()
         t1.start();
-
         //如下操作仍在main线程中执行的
         for(int i = 1;i < 100;i++){
             if(i % 2 == 0){
                 System.out.println(i + "***main()***");
             }
         }
+
+
     }
 }
