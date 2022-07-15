@@ -4,7 +4,7 @@ package Shangguigu.multiThread.DeadLock;
  * 演示线程的死锁
  *
  * 1.死锁的理解：不同的线程分别占用对方需要的同步资源不放弃，
- *       都在等待对方放弃自己需要的同步资源，就形成了线程的死锁
+ *             都在等待对方放弃自己需要的同步资源，就形成了线程的死锁
  * 2.说明:
  *      》出现死锁后，不会出现异常，不会出现提示，只是所有的线程都处于阻塞状态，无法继续
  *      》我们使用同步时，要避免出现死锁。
@@ -23,11 +23,12 @@ public class ThreadTest {
                     s1.append("a");
                     s2.append("1");
 
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    // 第一个线程里面加睡眠时间，会出现死锁
+//                    try {
+//                        Thread.sleep(10);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
 
                     synchronized (s2){
                         s1.append("b");
@@ -36,9 +37,11 @@ public class ThreadTest {
                         System.out.println(s1);
                         System.out.println(s2);
                     }
+
                 }
             }
         }.start();
+
 
         new Thread(new Runnable() {
             @Override
@@ -47,11 +50,11 @@ public class ThreadTest {
                     s1.append("c");
                     s2.append("3");
 
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        Thread.sleep(10);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
 
                     synchronized (s1){
                         s1.append("d");
@@ -63,6 +66,17 @@ public class ThreadTest {
                 }
             }
         }).start();
+
+        /**
+        // 使用 new Runnable接口的写法，自动生成
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }).start();
+         */
+
     }
 }
 
