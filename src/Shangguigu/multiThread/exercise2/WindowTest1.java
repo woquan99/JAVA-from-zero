@@ -30,13 +30,13 @@ class Window1 implements Runnable{
     @Override
     public void run(){
         while (true){
-            // 正确的
-            synchronized (Window1.class){
-//            // 错误的，此时this表示的是t1,t2,t3三个对象
-//            synchronized (this){//此时的this:唯一的windows1的对象
+//            // 正确的
+//            synchronized (Window1.class){
+            // 错误的，此时this表示的是t1,t2,t3三个对象
+            synchronized (this){//此时的this:唯一的windows1的对象
                 if(ticket>0){
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(10);
                     }catch (InterruptedException e){
                         e.printStackTrace();
                     }
