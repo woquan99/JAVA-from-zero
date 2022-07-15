@@ -1,5 +1,5 @@
 package Shangguigu.multiThread.DeadLock;
-
+// 死锁的演示
 class A {
     public synchronized void foo(B b) {
         System.out.println("当前线程名: " + Thread.currentThread().getName()
@@ -49,6 +49,7 @@ public class DeadLock implements Runnable {
         System.out.println("进入了主线程之后");
     }
 
+    @Override
     public void run() {
         Thread.currentThread().setName("副线程");
         // 调用b对象的bar方法
@@ -57,8 +58,10 @@ public class DeadLock implements Runnable {
     }
 
     public static void main(String[] args) {
+        // 相当于开启了一个分线程
         DeadLock dl = new DeadLock();
         new Thread(dl).start();
+
         dl.init();
     }
 }
