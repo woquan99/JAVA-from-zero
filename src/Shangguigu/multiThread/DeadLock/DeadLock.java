@@ -20,7 +20,7 @@ class A {
 }
 
 class B {
-    public synchronized void bar(A a) {
+    public synchronized void bar(A a) { // A 类的对象
         System.out.println("当前线程名: " + Thread.currentThread().getName()
                 + " 进入了B实例的bar方法"); // ②
         try {
@@ -62,6 +62,7 @@ public class DeadLock implements Runnable {
         DeadLock dl = new DeadLock();
         new Thread(dl).start();
 
+        // 调用主线程
         dl.init();
     }
 }
