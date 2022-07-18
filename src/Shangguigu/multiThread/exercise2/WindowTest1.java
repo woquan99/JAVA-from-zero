@@ -26,14 +26,15 @@ package Shangguigu.multiThread.exercise2;
  *    操作同步代码时，只能有一个线程参与，其他线程等待。相当于是一个单线程的过程，效率低。---局限性
  */
 class Window1 implements Runnable{
-    private int ticket =100;
+    private int ticket =10000;
+    Object obj = new Object();
     @Override
     public void run(){
         while (true){
 //            // 正确的
-//            synchronized (Window1.class){
+            synchronized (obj){
             // 错误的，此时this表示的是t1,t2,t3三个对象
-            synchronized (this){//此时的this:唯一的windows1的对象
+//            synchronized (this){//此时的this:唯一的windows1的对象
                 if(ticket>0){
                     try {
                         Thread.sleep(10);
