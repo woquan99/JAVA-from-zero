@@ -1,7 +1,7 @@
 package Shangguigu.multiThread.DeadLock;
 // 死锁的演示
 class A {
-    public synchronized void foo(B b) {
+    public synchronized void foo(B b) { // 同步监视器：A 类的对象：a
         System.out.println("当前线程名: " + Thread.currentThread().getName()
                 + " 进入了A实例的foo方法"); // ①
         try {
@@ -20,7 +20,7 @@ class A {
 }
 
 class B {
-    public synchronized void bar(A a) { // A 类的对象
+    public synchronized void bar(A a) { // 同步监视器：b
         System.out.println("当前线程名: " + Thread.currentThread().getName()
                 + " 进入了B实例的bar方法"); // ②
         try {
@@ -33,7 +33,7 @@ class B {
         a.last();
     }
 
-    public synchronized void last() {
+    public synchronized void last() { // 同步监视器：b
         System.out.println("进入了B类的last方法内部");
     }
 }
