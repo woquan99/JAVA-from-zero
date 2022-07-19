@@ -15,8 +15,15 @@ import java.util.concurrent.ThreadPoolExecutor;
  *          maximumPoolSize：最大线程数
  *          keepAliveTime：线程没有任务时最多保持多长时间后会终止
  *
+ * 同步监视器（锁）：是一个对象
+ * synchronized(同步监视器){
+ *     // 含操作共享数据的代码(不能包括多了，也不能少了)
+ * }
+ *
  * 面试题：创建多线程有几种方式？四种！
  * Thread\Runnable\Callable\ThreadPool
+ *
+ *
  */
 
 class NumberThread implements Runnable{
