@@ -1,4 +1,4 @@
-package Shangguigu.multiThread;
+package Shangguigu.multiThread.ThreadCommunication;
 
 /**
  * 线程通信的例子：使用两个线程打印1-100。线程1, 线程2 交替打印
