@@ -22,10 +22,10 @@ package Shangguigu.multiThread;
 
 
 //1.创建一个实现了 Runnable 接口的类
-//    方式一是：class MyThread extends Thread{}
+//  方式一是：class MyThread extends Thread{}
 class MThread implements Runnable{
 
-    //2.实现类去实现Runnable中的抽象方法:run()
+    //2.实现类去实现 Runnable 中的抽象方法:run()
     @Override
     public void run() {
         for(int i = 0;i < 100;i++){
