@@ -12,6 +12,12 @@ import java.util.concurrent.FutureTask;
  *      2.call()可以抛出异常，被外面的操作捕获，获取异常的信息
  *      3.Callable是支持泛型的
  *      4.需要借助FutureTask类，比如获取返回结果
+ *
+ *  Future接口：
+ *      可以对具体 Runnable、Callable 任务的执行结果进行取消、查询是否完成、获取结果等。
+ *      FutureTask 是 Future 接口的唯一的实现类
+ *      FutureTask 同时实现了 Runnable, Future 接口。它既可以作为 Runnable 被线程执行，又可以作为 Future 得到 Callable 的返回值
+ *
  */
     //1.创建一个实现Callable的实现类
 class NumThread implements Callable{
