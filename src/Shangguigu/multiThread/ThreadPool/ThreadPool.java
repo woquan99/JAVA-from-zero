@@ -21,7 +21,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * }
  *
  * 面试题：创建多线程有几种方式？四种！
- * Thread\Runnable\Callable\ThreadPool
+ * extends Thread\implements Runnable\implements Callable\ThreadPool
  *
  *
  */
