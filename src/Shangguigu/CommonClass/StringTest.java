@@ -47,21 +47,6 @@ public class StringTest {
         System.out.println(s5);//mbc
     }
 
-    String str = "hello";
-
-    //本质上this.value = new char[0];
-    String  s1 = new String();
-
-    //this.value = original.value;
-    String  s2 = new String(String original);
-
-    //this.value = Arrays.copyOf(value, value.length);
-    String  s3 = new String(char[] a);
-
-    String  s4 = new String(char[] a,int startIndex,int count);
-
-
-
 
 
 
