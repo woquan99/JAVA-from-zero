@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * https://matiji.net/exam/dohomework/1268/6
  * 互质子序列：一个序列中，最大公约数为1的子序列的个数
- *
+ * 不会诶
  */
 public class test6 {
     public static void main(String[] args){
@@ -17,10 +17,11 @@ public class test6 {
             arr[i]=input.nextInt();
         }
         Solution a = new Solution();
-        a.countDifferentSubsequenceGCDs(arr);
+        System.out.println(a.countDifferentSubsequenceGCDs(arr));
     }
 }
 
+// 计算序列中不同最大公约数的数目
 class Solution {
     public int countDifferentSubsequenceGCDs(int[] nums) {
         int maxNum = 0, ans = 0;
