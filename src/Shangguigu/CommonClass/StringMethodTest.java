@@ -156,11 +156,13 @@ public class StringMethodTest {
             System.out.println(strs[i]);
         }
         System.out.println();
+
         str2 = "hello.world.java";
         String[] strs2 = str2.split("\\.");
         for (int i = 0; i < strs2.length; i++) {
             System.out.println(strs2[i]);
         }
+
     }
 }
 
