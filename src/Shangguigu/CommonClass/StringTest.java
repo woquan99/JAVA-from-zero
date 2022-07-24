@@ -21,6 +21,20 @@ public class StringTest {
      * 6.字符串常量池中是不会存储相同内容的字符串的。
      *
      */
+
+//    String str = "hello";
+//
+//    //本质上this.value = new char[0];
+//    String  s1 = new String();
+//
+//    //this.value = original.value;
+//    String  s2 = new String(String original);
+//
+//    //this.value = Arrays.copyOf(value, value.length);
+//    String  s3 = new String(char[] a);
+//
+//    String  s4 = new String(char[] a,int startIndex,int count);
+
     @Test
     public void Test1(){
         String s1 = "abc";  //字面量的定义方式
@@ -64,7 +78,7 @@ public class StringTest {
         String s2 = "javaEE";
 
         //通过new + 构造器的方式:此时的s3和s4保存的地址值，是数据在堆空间中开辟空间以后对应的地址值。
-        String s3 = new String("javaEE");
+        String s3 = new String("javaEE");// 堆空间中的是地址值
         String s4 = new String("javaEE");
 
         System.out.println(s1 == s2);//true
@@ -90,16 +104,18 @@ public class StringTest {
  * @create 2020-05-09 11:20
  */
 class Person {
-
+    // 选中常量，右键：Alt+Insert-自动生成构造器
     String name;
     int age;
+
+    public Person() {
+    }
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Person() {
-    }
+
 }
 
