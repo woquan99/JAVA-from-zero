@@ -47,7 +47,7 @@ public class StringExer3 {
                         sBuffer.append(subString + ",");
                     }
                 }
-//                System.out.println(sBuffer);
+
                 if (sBuffer.length() != 0) {
                     break;
                 }
@@ -55,7 +55,6 @@ public class StringExer3 {
             String[] split = sBuffer.toString().replaceAll(",$", "").split("\\,");
             return split;
         }
-
         return null;
     }
 
