@@ -37,7 +37,7 @@ public class BlockTest {
         System.out.println(desc);
 
         Person p1 = new Person();
-        Person p2 = new Person();
+//        Person p2 = new Person();
         System.out.println(p1.age);
 
         Person.info();
@@ -64,7 +64,6 @@ class Person{
 //		eat();
 //		name = "Tom";
     }
-
     static{
         System.out.println("hello,static block-2");
     }
