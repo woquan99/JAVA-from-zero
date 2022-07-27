@@ -39,6 +39,7 @@ public class OtherClassTest {
     }
 
     /**
+     * 2.Math
      * abs 绝对值
      * acos,asin,atan,cos,sin,tan 三角函数
      * sqrt 平方根
@@ -59,6 +60,9 @@ public class OtherClassTest {
     }
 
 
+    /**
+     *  3.BigInteger 和 BigDecimal
+     */
     @Test
     public void test3() {
         BigInteger bi = new BigInteger("1243324112234324324325235245346567657653");
