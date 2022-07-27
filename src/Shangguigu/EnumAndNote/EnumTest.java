@@ -8,15 +8,17 @@ package Shangguigu.EnumAndNote;
  *
  * 二、如何定义枚举类
  *     方式一：JDK1.5之前需要自定义枚举类
- *     方式二：JDK 1.5 新增的enum 关键字用于定义枚举类
+ *     方式二：JDK 1.5 新增的 enum 关键字用于定义枚举类
  *
  */
 public class EnumTest {
     public static void main(String[] args) {
         Season spring = Season.SPRING;
         Season summer = Season.SUMMER;
+        Season autumn = Season.AUTUMN;
         System.out.println(spring);
         System.out.println(summer);
+        System.out.println(autumn);
     }
 }
 
