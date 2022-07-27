@@ -1,4 +1,4 @@
-package Shangguigu.EnumAndNote;
+package Shangguigu.EnumAndAnnotation;
 
 /**
  * 使用enum关键字定义枚举类

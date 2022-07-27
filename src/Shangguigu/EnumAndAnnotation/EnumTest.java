@@ -1,4 +1,4 @@
-package Shangguigu.EnumAndNote;
+package Shangguigu.EnumAndAnnotation;
 
 /**
  * 一、枚举类的使用
