@@ -56,8 +56,7 @@ public class FinalTest {
     public static void main(String[] args) {
 
         int num = 10;
-
-        num = num + 5;
+        num = num+5;
 
         FinalTest test = new FinalTest();
 //		test.setDown(5);
@@ -67,7 +66,6 @@ public class FinalTest {
 }
 
 final class FianlA{
-
 }
 
 //class B extends FinalA{     //错误，不能被继承。
@@ -80,7 +78,6 @@ final class FianlA{
 
 class AA{
     public final void show(){
-
     }
 }
 
