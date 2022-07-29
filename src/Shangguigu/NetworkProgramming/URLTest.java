@@ -14,7 +14,7 @@ import java.net.URL;
 public class URLTest {
     public static void main(String[] args) {
         try {
-            URL url = new URL("http://127.0.0.1:8080/work/164.jpg?username=subei");
+            URL url = new URL("http://127.0.0.1:8080/work/pikaqiu.jpg?username=subei");
 
 //            public String getProtocol(  )     获取该URL的协议名
             System.out.println(url.getProtocol());
