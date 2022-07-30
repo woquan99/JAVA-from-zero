@@ -2,6 +2,7 @@ package Shangguigu.IOStream;
 
 import org.junit.Test;
 import java.io.File;
+import java.util.Date;
 
 /**
  * File类的使用
@@ -36,20 +37,88 @@ public class FileTest {
      */
     @Test
     public void test(){
-        //构造器1：
+        // 构造器1：
         File file1 = new File("hello.txt");//相对于当前module
-        File file2 = new File("F:\\java\\Work2\\JavaSenior\\day08\\num.txt");
+        File file2 = new File("F:\\IDEA Data\\src\\pikaqiu.jpg");
 
         System.out.println(file1);
         System.out.println(file2);
 
-        //构造器2：
+        // 构造器2：
         File file3 = new File("D:\\workspace_idea1","JavaSenior");
         System.out.println(file3);
 
-        //构造器3：
+        // 构造器3：
         File file4 = new File(file3,"hi.txt");
         System.out.println(file4);
+    }
+
+    /**
+     * public String getAbsolutePath()：获取绝对路径
+     * public String getPath() ：获取路径
+     * public String getName() ：获取名称
+     * public String getParent()：获取上层文件目录路径。若无，返回null
+     * public long length() ：获取文件长度（即：字节数）。不能获取目录的长度。
+     * public long lastModified() ：获取最后一次的修改时间，毫秒值
+     */
+    @Test
+    public void test2(){
+        File file = new File("Hello.txt");
+        File file2 = new File("F:\\IDEA Data\\src\\pikaqiu2.jpg");
+
+        System.out.println(file.getAbsolutePath());
+        System.out.println(file.getPath());
+        System.out.println(file.getName());
+        System.out.println(file.getParent());
+        System.out.println(file.length());
+        System.out.println(new Date(file.lastModified()));
+
+        System.out.println();
+
+        System.out.println(file2.getAbsolutePath());
+        System.out.println(file2.getPath());
+        System.out.println(file2.getName());
+        System.out.println(file2.getParent());
+        System.out.println(file2.length());
+        System.out.println(file2.lastModified());
+    }
+
+    /**
+     *     如下的两个方法适用于文件目录：
+     *     public String[] list() ：获取指定目录下的所有文件或者文件目录的名称数组
+     *     public File[] listFiles() ：获取指定目录下的所有文件或者文件目录的File数组
+     */
+    @Test
+    public void test3(){
+        //文件需存在！！！
+        File file = new File("F:\\IDEA Data\\src");
+
+        String[] list = file.list();
+        for(String s : list){
+            System.out.println(s);
+        }
+
+        System.out.println();
+
+        File[] files = file.listFiles();
+        for(File f : files){
+            System.out.println(f);
+        }
+    }
+
+    /**
+     * File类的重命名功能
+     *
+     *  public boolean renameTo(File dest):把文件重命名为指定的文件路径
+     *    比如：file1.renameTo(file2)为例：
+     *         要想保证返回true,需要file1在硬盘中是存在的，且file2不能在硬盘中存在。
+     */
+    @Test
+    public void test4(){
+        File file1 = new File("F:\\IDEA Data\\src\\pikaqiu.jpg");
+        File file2 = new File("F:\\IDEA Data\\src\\pikaqiu3.jpg");
+        boolean renameTo = file2.renameTo(file1);
+        System.out.println(renameTo);
     }
 
 }
