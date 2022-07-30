@@ -177,7 +177,7 @@ public class FileTest {
      */
     @Test
     public void test6() throws IOException {
-        File file1 = new File("hi.txt");
+        File file1 = new File("F:\\IDEA Data\\src\\hi.txt");
         if(!file1.exists()){
             //文件的创建
             file1.createNewFile();
@@ -191,23 +191,24 @@ public class FileTest {
     @Test
     public void test7(){
         //文件目录的创建
-        File file1 = new File("d:\\io\\io1\\io3");
+        File file1 = new File("F:\\IDEA Data\\src\\pikaqiu4.jpg");
 
         boolean mkdir = file1.mkdir();
         if(mkdir){
             System.out.println("创建成功1");
         }
 
-        File file2 = new File("d:\\io\\io1\\io4");
+        File file2 = new File("F:\\IDEA Data\\src\\pikaqiu5.jpg");
 
         boolean mkdir1 = file2.mkdirs();
         if(mkdir1){
             System.out.println("创建成功2");
         }
         //要想删除成功，io4文件目录下不能有子目录或文件
-        File file3 = new File("D:\\io\\io1\\io4");
-        file3 = new File("D:\\io\\io1");
+        File file3 = new File("F:\\IDEA Data\\src\\pikaqiu4.jpg");
+        File file4 = new File("F:\\IDEA Data\\src\\pikaqiu5.jpg");
         System.out.println(file3.delete());
+        System.out.println(file4.delete());
     }
 
 }
