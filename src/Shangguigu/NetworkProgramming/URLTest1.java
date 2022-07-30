@@ -15,11 +15,10 @@ public class URLTest1 {
             URL url = new URL("http://127.0.0.1:8080/work/pikaqiu.jpg");
             // 连接url
             urlConnection = (HttpURLConnection) url.openConnection();
-
             urlConnection.connect();
 
             is = urlConnection.getInputStream();
-            fos = new FileOutputStream("day10\\1643.jpg");
+            fos = new FileOutputStream("F:\\IDEA Data\\src\\pikaqiu.jpg");
 
             byte[] buffer = new byte[1024];
             int len;
