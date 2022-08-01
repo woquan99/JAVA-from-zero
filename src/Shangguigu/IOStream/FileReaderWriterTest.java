@@ -47,7 +47,7 @@ public class FileReaderWriterTest {
     public void test(){
         FileReader fr = null;
         try {
-            //实例化File对象，指明要操作的文件
+            //1.实例化File对象，指明要操作的文件
             File file = new File("F:\\IDEA Data\\src\\hello1.txt");//相较于当前的Module
             //2.提供具体的流
             fr = new FileReader(file);
@@ -82,7 +82,7 @@ public class FileReaderWriterTest {
             //1.File类的实例化
             File file = new File("F:\\IDEA Data\\src\\hello1.txt");
 
-            //2.FileReader流的实例化
+            //2.FileReader流的实例化，建立一个流对象，将已存在的一个文件加载进流
             fr = new FileReader(file);
 
             //3.读入的操作
@@ -97,9 +97,10 @@ public class FileReaderWriterTest {
 //                    System.out.print(cbuf[i]);
 //                }
                 //正确的写法
-                for(int i = 0;i < len;i++){
-                    System.out.print(cbuf[i]);
-                }
+//                for(int i = 0;i < len;i++){
+//                    System.out.print(cbuf[i]);
+//                }
+//                System.out.println();
 
                 //方式二：
                 //错误的写法,对应着方式一的错误的写法
