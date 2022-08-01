@@ -144,16 +144,12 @@ public class FileIOPutTest {
 
         long start = System.currentTimeMillis();
 
-//        String srcPath = "C:\\Users\\29433\\Desktop\\164.jpg";
-//        String destPath = "C:\\Users\\29433\\Desktop\\164.jpg";
-
         String srcPath = "F:\\IDEA Data\\src\\hello1.txt";
         String destPath = "F:\\IDEA Data\\src\\hello.txt";
 
         copyFile(srcPath,destPath);
 
         long end = System.currentTimeMillis();
-
         System.out.println("复制操作花费的时间为：" + (end - start));//1
     }
 
