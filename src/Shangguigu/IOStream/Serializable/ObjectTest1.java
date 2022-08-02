@@ -1,7 +1,7 @@
-package Shangguigu.IOStream;
+package Shangguigu.IOStream.Serializable;
 
+import java.io.Serializable;
 import org.junit.Test;
-
 import java.io.*;
 
 
@@ -10,7 +10,7 @@ import java.io.*;
  * 1.ObjectInputStream 和 ObjectOutputStream
  * 2.作用：用于存储和读取基本数据类型数据或对象的处理流。它的强大之处就是可以把Java中的对象写入到数据源中，也能把对象从数据源中还原回来。
  *
- * 3.要想一个java对象是可序列化的，需要满足相应的要求。见 Person.java
+ * 3.要想一个java对象是可序列化的，需要满足相应的要求。见Person.java
  *
  * 4.序列化机制：
  * 对象序列化机制允许把内存中的Java对象转换成平台无关的二进制流，从而允许把这种
@@ -18,7 +18,7 @@ import java.io.*;
  * 当其它程序获取了这种二进制流，就可以恢复成原来的Java对象。
  *
  */
-public class ObjectTest {
+public class ObjectTest1 {
 
     /**
      * 序列化过程：将内存中的java对象保存到磁盘中或通过网络传输出去
@@ -28,14 +28,14 @@ public class ObjectTest {
     public void test(){
         ObjectOutputStream oos = null;
         try {
-            // 1.创造流
-            oos = new ObjectOutputStream(new FileOutputStream("F:\\IDEA Data\\src\\object1.dat"));
-            // 2.制造对象
-            oos.writeObject(new String("滕王阁欢迎你"));
-            // 3.刷新操作
+            //创造流
+            oos = new ObjectOutputStream(new FileOutputStream("F:\\IDEA Data\\src\\objecttest1.dat"));
+            //制造对象
+            oos.writeObject(new String("南开大学欢迎你"));
+            //刷新操作
             oos.flush();
 
-            oos.writeObject(new Person("李时珍",65));
+            oos.writeObject(new Person1("李时珍",65,0));
             oos.flush();
 
 
@@ -61,16 +61,15 @@ public class ObjectTest {
     public void test2(){
         ObjectInputStream ois = null;
         try {
-            ois = new ObjectInputStream(new FileInputStream("F:\\IDEA Data\\src\\object1.dat"));
+            ois = new ObjectInputStream(new FileInputStream("F:\\IDEA Data\\src\\objecttest1.dat"));
 
             Object obj = ois.readObject();
             String str = (String) obj;
 
-            Person p = (Person) ois.readObject();
+            Person1 p = (Person1) ois.readObject();
 
             System.out.println(str);
             System.out.println(p);
-            System.out.println(p.getName());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -89,16 +88,42 @@ public class ObjectTest {
 }
 
 
-class Person implements Serializable {
-    public static final long serialVersionUID = 4815151541105l;
+
+/**
+ * Person需要满足如下的要求，方可序列化
+ * 1.需要实现接口：Serializable
+ */
+class Person1 implements Serializable {
+    public static final long serialVersionUID = 475463534532L;
+
     private String name;
     private int age;
-    public Person() {
+    private int id;
+
+    public Person1() {
     }
 
-    public Person(String name, int age) {
+    public Person1(String name, int age,int id) {
         this.name = name;
         this.age = age;
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id=" + id +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
