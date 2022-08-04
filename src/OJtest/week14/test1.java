@@ -8,16 +8,20 @@ import java.util.Scanner;
  * 1.使用ai次普通攻击消灭该怪物
  * 2.施放一次技能消灭该怪物
  * 刻俄柏最多只能使用k次技能，她想知道最少使用多少次普通攻击消灭所有怪物。
+ * https://matiji.net/exam/dohomework/1389/1
  */
 public class test1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int sum = 0;
+        /**
+         * 这里面需要防止 sum 超过取值范围
+         */
+        Long sum = 0l;
         int n = input.nextInt();
         int k = input.nextInt();
-        double[] arr = new double[n];
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = input.nextDouble();
+            arr[i] = input.nextInt();
         }
         if (n <= k) {
             System.out.print(0);
@@ -26,11 +30,8 @@ public class test1 {
             Arrays.sort(arr);// 按照从小到大的顺序排列
             for (int i = 0; i < (n - k); i++) {
                 sum += arr[i];
-//                int b = (int)arr[i]+1;
-//                sum += b;
             }
             System.out.println(sum);
         }
-
     }
 }
