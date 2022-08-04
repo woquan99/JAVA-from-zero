@@ -18,5 +18,6 @@ public class test6 {
         int k = input.nextInt();
 
 
+
     }
 }
