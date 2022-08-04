@@ -26,8 +26,7 @@ public class test4 {
         for(int m=1;m<=n;m++){
             int k= f(n,m);
             sum += (k*k);
-
         }
-        System.out.print(sum);
+        System.out.print(sum%(1e9+7));
     }
 }
