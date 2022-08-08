@@ -13,11 +13,11 @@ public class BreakPointDemo {
         System.out.println("this is the detail line break point！");
     }
     // 方法断点 | 接口跳转实现类
-//    public static void method(){
-//        System.out.println("this is from method!");
-//        IService iservice = new IServiceImpl();
-//        iservice.execute();
-//    }
+    public static void method(){
+        System.out.println("this is from method!");
+        IService iservice = new IServiceImpl();
+        iservice.execute();
+    }
     // 异常断点 | 全局捕获
     public static void exception(){
         Object o = null;
@@ -28,15 +28,16 @@ public class BreakPointDemo {
     // 字段断点 | 读写监控
     public static void field(){
         Person p = new Person("field",10);
+        p.setAge(12);
         System.out.println(p);
     }
 
     public static void main(String[] args){
 //        line();
-        detailLine();
+//        detailLine();
 //        method();
 //        exception();
-//        field();
+        field();
     }
 
 }
