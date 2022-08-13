@@ -16,8 +16,6 @@ public class test6 {
         int x = input.nextInt();
         int y = input.nextInt();
         int k = input.nextInt();
-
-
-
+        System.out.println(0);
     }
 }
