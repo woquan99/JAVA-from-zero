@@ -10,12 +10,15 @@ import java.util.Scanner;
 public class test4 {
     public static int f(int n,int m)//定义n个球中取m个球,组合求解
     {
-        if(n<m)
+        if(n<m) {
             return 0;//如果n小于m，则不存在
-        if(n==m)
+        }
+        if(n==m) {
             return 1;        //只有一种取法
-        if(m==0)
+        }
+        if(m==0) {
             return 1;             //只有一种取法
+        }
         return f(n-1,m-1)+f(n-1,m);//有一个球设置为特殊球x，所有取法分成两部分，划分标准
     }
 

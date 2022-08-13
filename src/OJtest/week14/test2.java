@@ -1,54 +1,46 @@
 package OJtest.week14;
 
 /**
+ * 最常快乐前缀
  * 给定一个字符串。查找既是前缀又是后缀且在中间部分出现的最长子串
  * https://matiji.net/exam/dohomework/1389/2
+ * LeetCode类似题：https://leetcode.cn/problems/longest-happy-prefix/solution/zui-chang-kuai-le-qian-zhui-by-leetcode-solution/
  */
 
 import java.util.Scanner;
 
 public class test2 {
+
+    public static String longestPrefix(String s) {
+        int n = s.length();
+        long prefix = 0, suffix = 0;
+        long base = 31, mod = 1000000007, mul = 1;
+        int happy = 0;
+        for (int i = 1; i < n; ++i) {
+            prefix = (prefix * base + (s.charAt(i - 1) - 'a')) % mod;
+            suffix = (suffix + (s.charAt(n - i) - 'a') * mul) % mod;
+            if (prefix == suffix) {
+                happy = i;
+            }
+            mul = mul * base % mod;
+        }
+        if(happy==1){
+            return s.substring(1, happy);}
+        else if (happy!=0&&happy>1){
+            return s.substring(1,happy);
+        }
+        else {
+            return "-1";
+        }
+
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String s = input.next();
-        System.out.print(-1);
-//
-//        // 最大长度
-//        int max = 0;
-//        // 起始字符
-//        Character c = s.charAt(0);
-//        // 当前数量
-//        int num = 1;
-//        // 起始下标
-//        int start = 0;
-//        // 最长子串
-//        String maxStr = s.substring(0, 1);
-//        // 遍历字符串
-//        for (int i = 1; i < s.length(); i++) {
-//            // 当前字符
-//            char o = s.charAt(i);
-//            // 判断是否相等
-//            if (c.equals(o)) {
-//                // 获取最长重复字符
-//                if (++num > max) {
-//                    maxStr = s.substring(start, i + 1);
-//                }
-//                // 获取最长重复字符的长度
-//                max = Math.max(max, num);
-//            } else {
-//                c = o;
-//                num = 1;
-//                start = i;
-//            }
-//        }
-//        // 不能放过只有一个的情况
-//        if (num > max) {
-//            maxStr = s.substring(start);
-//        }
-//        max = Math.max(max, num);
-//
-//    }
-
+        String s1 = longestPrefix(s);
+        System.out.print(s1);
 
     }
 }
+

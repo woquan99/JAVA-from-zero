@@ -23,6 +23,7 @@ public class Student extends Person{
         System.out.println("我是一个学生。");
     }
 
+    @Override
     public String info(){
         return null;
     }
