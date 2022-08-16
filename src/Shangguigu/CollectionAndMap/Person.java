@@ -1,6 +1,4 @@
-package Shangguigu.Set;
-
-import java.util.Objects;
+package Shangguigu.CollectionAndMap;
 
 public class Person {
 

@@ -1,4 +1,4 @@
-package Shangguigu.Set;
+package Shangguigu.CollectionAndMap;
 
 import org.junit.Test;
 import java.util.ArrayList;

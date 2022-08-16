@@ -1,4 +1,4 @@
-package Shangguigu.Set;
+package Shangguigu.CollectionAndMap;
 
 /**
  * 一、集合的框架
