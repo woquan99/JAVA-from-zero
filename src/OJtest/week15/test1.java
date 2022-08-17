@@ -97,8 +97,17 @@ public class test1 {
 //                System.out.print(arr1[i][j]);
             }
         }
-        for(int i=0;i<T;i++){
-            System.out.println(Arrays.toString(arr1[i]));// 输出数组里面的元素，但是带了[]
+
+        // 输出数组里面的元素，但是带了[]，而且数组元素用逗号分开了
+//        for(int i=0;i<T;i++){
+//            System.out.println(Arrays.toString(arr1[i]));
+//        }
+        // 二维数组逐行输出，每个元素都空一格
+        for (int i = 0; i < T; i++) {
+            for (int j = 0; j < arr1[i].length; j++) {
+                System.out.print(arr1[i][j]+' ');
+            }
+            System.out.println();
         }
 
 
