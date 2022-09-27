@@ -1,4 +1,4 @@
-package com.atguigu.client;
+package JavaNIO.atguigu_nio_chat.client;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

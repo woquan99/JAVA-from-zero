@@ -1,4 +1,4 @@
-package com.atguigu.charset;
+package JavaNIO.atguigu_nio.charset;
 
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -20,7 +20,7 @@ public class CharsetDemo {
 
         //3 创建缓冲区
         CharBuffer charBuffer = CharBuffer.allocate(1024);
-        charBuffer.put("atguigu尚硅谷");
+        charBuffer.put("Woquan偓佺");
         charBuffer.flip();
 
         //4 编码

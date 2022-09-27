@@ -1,4 +1,4 @@
-package com.atguigu.server;
+package JavaNIO.atguigu_nio_chat.server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
