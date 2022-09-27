@@ -11,7 +11,6 @@ import java.util.Set;
 //服务器端
 public class ChatServer {
 
-
     //服务器端启动的方法
     public void startServer() throws IOException {
         //1 创建Selector选择器
@@ -30,23 +29,22 @@ public class ChatServer {
         System.out.println("服务器已经启动成功了");
 
         //5 循环，等待有新链接接入
-        //while(true)
+        //while(true)// 效果等效于下面的for(;;)
         for(;;) {
-            //获取channel数量
+            // 获取 channel 数量
             int readChannels = selector.select();
-
             if(readChannels == 0) {
                 continue;
             }
 
-            //获取可用的channel
+            // 获取可用的 channel
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
-            //遍历集合
+            // 通过迭代器的方式，遍历集合
             Iterator<SelectionKey> iterator = selectionKeys.iterator();
             while (iterator.hasNext()) {
                 SelectionKey selectionKey = iterator.next();
 
-                //移除set集合当前selectionKey
+                // 移除set集合当前selectionKey，因为已经取出来了
                 iterator.remove();
 
                 //6 根据就绪状态，调用对应方法实现具体业务操作
@@ -56,7 +54,7 @@ public class ChatServer {
                 }
                 //6.2 如果可读状态
                 if(selectionKey.isReadable()) {
-                    readOperator(selector,selectionKey);
+                    readOperator(selector,selectionKey);// 可读状态不需要serverSocketChannel
                 }
             }
         }
@@ -119,9 +117,8 @@ public class ChatServer {
         //3 把channel注册到selector选择器上，监听可读状态
         socketChannel.register(selector,SelectionKey.OP_READ);
 
-        //4 客户端回复信息
-        socketChannel.write(Charset.forName("UTF-8")
-                .encode("欢迎进入聊天室，请注意隐私安全"));
+        //4 给客户端回复信息
+        socketChannel.write(Charset.forName("UTF-8").encode("欢迎进入聊天室，请注意隐私安全"));
     }
 
     //启动主方法
