@@ -26,14 +26,13 @@ public class AsyncFileChannelDemo {
     public void writeAsyncFileComplate() throws IOException {
         //1 创建AsynchronousFileChannel
         Path path = Paths.get("F:\\IDEA Data\\src\\JavaNIO\\atguigu_nio\\asyncfilechannel\\AsyncFile.txt");
-        AsynchronousFileChannel fileChannel =
-                AsynchronousFileChannel.open(path, StandardOpenOption.WRITE);
+        AsynchronousFileChannel fileChannel = AsynchronousFileChannel.open(path, StandardOpenOption.WRITE);
 
         //2 创建Buffer
         ByteBuffer buffer = ByteBuffer.allocate(1024);
 
         //3 write方法
-        buffer.put("atguigujavajava".getBytes());
+        buffer.put("WoquanTest2".getBytes());
         buffer.flip();
 
         fileChannel.write(buffer, 0, buffer, new CompletionHandler<Integer, ByteBuffer>() {
@@ -61,7 +60,7 @@ public class AsyncFileChannelDemo {
         ByteBuffer buffer = ByteBuffer.allocate(1024);
 
         //3 write方法
-        buffer.put("atguigu ".getBytes());
+        buffer.put("WoquanTest".getBytes());
         buffer.flip();
         Future<Integer> future = fileChannel.write(buffer, 0);
 

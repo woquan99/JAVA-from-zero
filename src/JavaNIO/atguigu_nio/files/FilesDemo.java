@@ -49,7 +49,7 @@ public class FilesDemo {
 //        }
 
 
-        Path rootPath = Paths.get("d:\\atguigu");
+        Path rootPath = Paths.get("F:\\IDEA Data\\src\\JavaNIO\\atguigu_nio\\charset\\CharsetDemo.txt");
         String fileToFind = File.separator + "002.txt";
 
         try {
