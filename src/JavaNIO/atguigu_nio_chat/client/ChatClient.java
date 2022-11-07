@@ -8,14 +8,13 @@ import java.nio.channels.SocketChannel;
 import java.nio.charset.Charset;
 import java.util.Scanner;
 
-//客户端
+// 客户端，相当于GM
 public class ChatClient {
 
-    //启动客户端方法
+    // 启动客户端方法
     public void startClient(String name) throws IOException {
         //连接服务端
-        SocketChannel socketChannel =
-                SocketChannel.open(new InetSocketAddress("127.0.0.1",8000));
+        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1",8000));
 
         //接收服务端响应数据
         Selector selector = Selector.open();
@@ -32,9 +31,10 @@ public class ChatClient {
                 socketChannel.write(Charset.forName("UTF-8").encode(name +" : " +msg));
             }
         }
+
+
     }
 
     public static void main(String[] args) {
-
     }
 }
