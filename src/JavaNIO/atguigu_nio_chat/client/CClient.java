@@ -6,7 +6,7 @@ public class CClient {
 
     public static void main(String[] args) {
         try {
-            new ChatClient().startClient("Woquan");
+            new ChatClient().startClient("Coco");
         } catch (IOException e) {
             e.printStackTrace();
         }

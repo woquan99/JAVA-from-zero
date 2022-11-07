@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 // 服务器端，相当于GO
-public class ChatServer {
+public class ChatServer1 {
 
     //服务器端启动的方法
     public void startServer() throws IOException {
@@ -26,8 +26,9 @@ public class ChatServer {
         serverSocketChannel.configureBlocking(false);
 
         //4 把channel通道注册到selector选择器上
-        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT|SelectionKey.OP_WRITE);
         System.out.println("服务器已经启动成功了");
+
 
         //5 循环，等待有新链接接入
         //while(true)// 效果等效于下面的for(;;)
@@ -37,6 +38,7 @@ public class ChatServer {
             if(readChannels == 0) {
                 continue;
             }
+
 
             // 获取可用的 channel
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
@@ -59,6 +61,7 @@ public class ChatServer {
                 }
             }
         }
+
 
     }
 
@@ -88,6 +91,17 @@ public class ChatServer {
             //广播给其他客户端
             System.out.println(message);
             castOtherClient(message,selector,socketChannel);
+//            castOtherClient("GO ："+msg,selector,socketChannel);
+
+
+//            Scanner scanner = new Scanner(System.in);
+//            while(scanner.hasNextLine()) {
+//                String msg = scanner.nextLine();
+//                if(msg.length()>0) {
+//                    castOtherClient("GO ："+msg,selector,socketChannel);
+//                }
+//            }
+
         }
     }
 
@@ -128,7 +142,7 @@ public class ChatServer {
     //启动主方法
     public static void main(String[] args) {
         try {
-            new ChatServer().startServer();
+            new ChatServer1().startServer();
         } catch (IOException e) {
             e.printStackTrace();
         }

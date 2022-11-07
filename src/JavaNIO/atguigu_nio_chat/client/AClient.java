@@ -6,7 +6,7 @@ public class AClient {
 
     public static void main(String[] args) {
         try {
-            new ChatClient().startClient("lucy");
+            new ChatClient().startClient("Alice");
         } catch (IOException e) {
             e.printStackTrace();
         }

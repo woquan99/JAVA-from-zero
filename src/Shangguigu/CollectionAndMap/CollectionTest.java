@@ -6,7 +6,7 @@ package Shangguigu.CollectionAndMap;
  * 1.集合、数组都是对多个数据进行存储操作的结构，简称Java容器。
  *   说明；此时的存储，主要是指能存层面的存储，不涉及到持久化的存储（.txt,.jpg,.avi,数据库中）
  *
- * 2.1数组在存储多个数据封面的特点：
+ * 2.1数组在存储多个数据方面的特点：
  *      》一旦初始化以后，它的长度就确定了。
  *      》数组一旦定义好，它的数据类型也就确定了。我们就只能操作指定类型的数据了。
  *      比如：String[] arr;int[] str;
@@ -77,7 +77,7 @@ public class CollectionTest {
      * Collection接口中声明的方法的测试
      *
      * 结论：
-     * 向Collection接口的实现类的对象中添加数据obj时，要求obj所在类要重写equals().
+     * 向 Collection 接口的实现类的对象中添加数据 obj 时，要求 obj 所在类要重写 equals().
      */
     @Test
     public void test1(){
